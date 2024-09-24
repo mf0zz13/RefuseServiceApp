@@ -5,18 +5,6 @@
       "PackagePath": "staticwebassets\\RefuseServiceDispatachApp.styles.css"
     },
     {
-      "Id": "C:\\Users\\micha\\OneDrive\\Documents\\C#_code\\RefuseService\\RefuseServiceDispatachApp\\wwwroot\\css\\app.css",
-      "PackagePath": "staticwebassets\\css\\app.css"
-    },
-    {
-      "Id": "C:\\Users\\micha\\OneDrive\\Documents\\C#_code\\RefuseService\\RefuseServiceDispatachApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
-      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
-    },
-    {
-      "Id": "C:\\Users\\micha\\OneDrive\\Documents\\C#_code\\RefuseService\\RefuseServiceDispatachApp\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
-      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
-    },
-    {
       "Id": "C:\\Users\\micha\\OneDrive\\Documents\\C#_code\\RefuseService\\RefuseServiceDispatachApp\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },

@@ -69,3 +69,9 @@ C:\Users\micha\OneDrive\Documents\C#_code\RefuseService\RefuseServiceManagementP
 C:\Users\micha\OneDrive\Documents\C#_code\RefuseService\RefuseServiceManagementPortal\bin\Debug\net8.0\Microsoft.JSInterop.dll
 C:\Users\micha\OneDrive\Documents\C#_code\RefuseService\RefuseServiceManagementPortal\obj\Debug\net8.0\RefuseServiceManagementPortal.csproj.AssemblyReference.cache
 C:\Users\micha\OneDrive\Documents\C#_code\RefuseService\RefuseServiceManagementPortal\obj\Debug\net8.0\RefuseSe.FA098DCA.Up2Date
+C:\Users\micha\OneDrive\Documents\C#_code\RefuseService\RefuseServiceManagementPortal\bin\Debug\net8.0\Microsoft.Extensions.Localization.dll
+C:\Users\micha\OneDrive\Documents\C#_code\RefuseService\RefuseServiceManagementPortal\bin\Debug\net8.0\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Users\micha\OneDrive\Documents\C#_code\RefuseService\RefuseServiceManagementPortal\bin\Debug\net8.0\MudBlazor.dll
+C:\Users\micha\OneDrive\Documents\C#_code\RefuseService\RefuseServiceManagementPortal\bin\Debug\net8.0\RefuseServiceManagementPortal.staticwebassets.endpoints.json
+C:\Users\micha\OneDrive\Documents\C#_code\RefuseService\RefuseServiceManagementPortal\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\micha\OneDrive\Documents\C#_code\RefuseService\RefuseServiceManagementPortal\obj\Debug\net8.0\staticwebassets\msbuild.RefuseServiceManagementPortal.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
