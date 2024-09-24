@@ -1,5 +1,14 @@
+wwwroot\_content\Blazor.Bootstrap\Blazor.Bootstrap.bundle.scp.css
+wwwroot\_content\Blazor.Bootstrap\blazor.bootstrap.css
+wwwroot\_content\Blazor.Bootstrap\blazor.bootstrap.js
+wwwroot\_content\Blazor.Bootstrap\blazor.bootstrap.pdf.js
+wwwroot\_content\Blazor.Bootstrap\blazor.bootstrap.sortable-list.js
+wwwroot\_content\Blazor.Bootstrap\icon\128X128.png
+wwwroot\_content\Blazor.Bootstrap\pdfjs-4.0.379.min.js
+wwwroot\_content\Blazor.Bootstrap\pdfjs-4.0.379.worker.min.js
+wwwroot\_content\MudBlazor\MudBlazor.min.css
+wwwroot\_content\MudBlazor\MudBlazor.min.js
 Components\Layout\MainLayout.razor.css
-Components\Layout\NavMenu.razor.css
 OpenSans-Regular.ttf
 appicon.ico
 appiconLargeTile.scale-100.png
@@ -60,8 +69,5 @@ splashSplashScreen.scale-400.png
 wwwroot\RefuseServiceDispatachApp.styles.css
 wwwroot\RefuseServiceDispatachApp.bundle.scp.css
 AboutAssets.txt
-wwwroot\css\app.css
-wwwroot\css\bootstrap\bootstrap.min.css
-wwwroot\css\bootstrap\bootstrap.min.css.map
 wwwroot\favicon.png
 wwwroot\index.html
