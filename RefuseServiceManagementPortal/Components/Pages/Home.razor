@@ -2,35 +2,28 @@
 @using BlazorBootstrap;
 @using MudBlazor;
 
-<div class="row no-gutters">
-    <div class="col">
-        <Card>
-            <CardBody>
-                <CardTitle Style="text-align:center" Class="card-title">
-                    Fleet Status
-                </CardTitle>
-                <MudChart ChartType="MudBlazor.ChartType.Donut" ChartOptions="chartColors" InputData="@data" InputLabels="@labels">
-                    <CustomGraphics>
-                        <text class="donut-inner-text" x="50%" y="40%" dominant-baseline="middle" text-anchor="middle" fill="black" font-family="Helvetica" font-size="3">Available Trucks</text>
-                        <text class="donut-inner-text" x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="black" font-family="Helvetica" font-size="5">@availableTrucks</text>
-                    </CustomGraphics>
-                </MudChart>
-            </CardBody>
-        </Card>
-    </div>
-    <div class="col-8">
-        <div class="card">
-            <h1>Test</h1>
-        </div>
-    </div>
-</div>
+<MudGrid>
+    <Card>
+        <CardBody>
+            <CardTitle Style="text-align:center" Class="card-title">
+                Fleet Status
+            </CardTitle>
+            <MudChart ChartType="MudBlazor.ChartType.Donut" ChartOptions="chartColors" InputData="@data" InputLabels="@labels">
+                <CustomGraphics>
+                    <text class="donut-inner-text" x="50%" y="40%" dominant-baseline="middle" text-anchor="middle" fill="black" font-family="Helvetica" font-size="3">Available Trucks</text>
+                    <text class="donut-inner-text" x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" fill="black" font-family="Helvetica" font-size="5">@availableTrucks</text>
+                </CustomGraphics>
+            </MudChart>
+        </CardBody>
+    </Card>
+</MudGrid>
 
 
 
     Welcome to your new app.🚛
 @code {
     private double[] data = { (100 / 25) * 12, (100 / 25) * 8, (100 / 25) * 4 };
-    private string[] labels = { "Available", "Dispatched", "Need Maintenace" };
+    private string[] labels = { "Available", "Dispatched", "Need Maintenance" };
 
     private int availableTrucks = 12;
 

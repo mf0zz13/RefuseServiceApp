@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RefuseServiceManagementPortal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a574d90afd20a43886f9bb8bdd19b68ae846891")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+072406ce6311eaa981639d545ad4800a25a61a5f")]
 [assembly: System.Reflection.AssemblyProductAttribute("RefuseServiceManagementPortal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RefuseServiceManagementPortal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

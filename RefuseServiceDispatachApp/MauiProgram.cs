@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using MudBlazor.Services;
 
 namespace RefuseServiceDispatachApp
 {
@@ -20,6 +21,10 @@ namespace RefuseServiceDispatachApp
     		builder.Services.AddBlazorWebViewDeveloperTools();
     		builder.Logging.AddDebug();
 #endif
+
+            builder.Services.AddBlazorBootstrap();
+
+            builder.Services.AddMudServices();
 
             return builder.Build();
         }
