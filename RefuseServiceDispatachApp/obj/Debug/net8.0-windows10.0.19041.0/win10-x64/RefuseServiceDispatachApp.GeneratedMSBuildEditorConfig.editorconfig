@@ -12,58 +12,60 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = RefuseServiceDispatachApp
 build_property.RootNamespace = RefuseServiceDispatachApp
-build_property.ProjectDir = C:\Users\micha\OneDrive\Documents\C#_code\RefuseService\RefuseServiceDispatachApp\
+build_property.ProjectDir = C:\Users\micha\OneDrive\Documents\C#_code\MSSA\RefuseServiceApp\RefuseServiceDispatachApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\micha\OneDrive\Documents\C#_code\RefuseService\RefuseServiceDispatachApp
+build_property.MSBuildProjectDirectory = C:\Users\micha\OneDrive\Documents\C#_code\MSSA\RefuseServiceApp\RefuseServiceDispatachApp
 build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/micha/OneDrive/Documents/C\#_code/RefuseService/RefuseServiceDispatachApp/App.xaml]
+[C:/Users/micha/OneDrive/Documents/C\#_code/MSSA/RefuseServiceApp/RefuseServiceDispatachApp/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = RefuseServiceDispatachApp.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
 build_metadata.AdditionalFiles.RelativePath = App.xaml
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/micha/OneDrive/Documents/C\#_code/RefuseService/RefuseServiceDispatachApp/MainPage.xaml]
+[C:/Users/micha/OneDrive/Documents/C\#_code/MSSA/RefuseServiceApp/RefuseServiceDispatachApp/MainPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = RefuseServiceDispatachApp.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/micha/OneDrive/Documents/C\#_code/RefuseService/RefuseServiceDispatachApp/Components/Pages/Home.razor]
+[C:/Users/micha/OneDrive/Documents/C\#_code/MSSA/RefuseServiceApp/RefuseServiceDispatachApp/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/micha/OneDrive/Documents/C\#_code/RefuseService/RefuseServiceDispatachApp/Components/Pages/Weather.razor]
+[C:/Users/micha/OneDrive/Documents/C\#_code/MSSA/RefuseServiceApp/RefuseServiceDispatachApp/Components/Pages/Weather.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/micha/OneDrive/Documents/C\#_code/RefuseService/RefuseServiceDispatachApp/Components/Routes.razor]
+[C:/Users/micha/OneDrive/Documents/C\#_code/MSSA/RefuseServiceApp/RefuseServiceDispatachApp/Components/Routes.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/micha/OneDrive/Documents/C\#_code/RefuseService/RefuseServiceDispatachApp/Components/_Imports.razor]
+[C:/Users/micha/OneDrive/Documents/C\#_code/MSSA/RefuseServiceApp/RefuseServiceDispatachApp/Components/_Imports.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/micha/OneDrive/Documents/C\#_code/RefuseService/RefuseServiceDispatachApp/Components/Layout/MainLayout.razor]
+[C:/Users/micha/OneDrive/Documents/C\#_code/MSSA/RefuseServiceApp/RefuseServiceDispatachApp/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==

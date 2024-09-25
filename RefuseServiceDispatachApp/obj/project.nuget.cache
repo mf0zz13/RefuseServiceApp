@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TH9gXULSB/M=",
+  "dgSpecHash": "pEze4hvdfOE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\micha\\OneDrive\\Documents\\C#_code\\RefuseService\\RefuseServiceDispatachApp\\RefuseServiceDispatachApp.csproj",
+  "projectFilePath": "C:\\Users\\micha\\OneDrive\\Documents\\C#_code\\MSSA\\RefuseServiceApp\\RefuseServiceDispatachApp\\RefuseServiceDispatachApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\micha\\.nuget\\packages\\blazor.bootstrap\\3.0.0\\blazor.bootstrap.3.0.0.nupkg.sha512",
     "C:\\Users\\micha\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",
@@ -136,6 +136,11 @@
     "C:\\Users\\micha\\.nuget\\packages\\xamarin.kotlin.stdlib.jdk8\\1.9.0.1\\xamarin.kotlin.stdlib.jdk8.1.9.0.1.nupkg.sha512",
     "C:\\Users\\micha\\.nuget\\packages\\xamarin.kotlinx.coroutines.android\\1.7.2.1\\xamarin.kotlinx.coroutines.android.1.7.2.1.nupkg.sha512",
     "C:\\Users\\micha\\.nuget\\packages\\xamarin.kotlinx.coroutines.core.jvm\\1.7.2.1\\xamarin.kotlinx.coroutines.core.jvm.1.7.2.1.nupkg.sha512",
+    "C:\\Users\\micha\\.nuget\\packages\\microsoft.android.runtime.34.android-x64\\34.0.138\\microsoft.android.runtime.34.android-x64.34.0.138.nupkg.sha512",
+    "C:\\Users\\micha\\.nuget\\packages\\microsoft.android.runtime.34.android-arm64\\34.0.138\\microsoft.android.runtime.34.android-arm64.34.0.138.nupkg.sha512",
+    "C:\\Users\\micha\\.nuget\\packages\\microsoft.android.ref.34\\34.0.138\\microsoft.android.ref.34.34.0.138.nupkg.sha512",
+    "C:\\Users\\micha\\.nuget\\packages\\microsoft.android.runtime.34.android-arm\\34.0.138\\microsoft.android.runtime.34.android-arm.34.0.138.nupkg.sha512",
+    "C:\\Users\\micha\\.nuget\\packages\\microsoft.android.runtime.34.android-x86\\34.0.138\\microsoft.android.runtime.34.android-x86.34.0.138.nupkg.sha512",
     "C:\\Users\\micha\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.34\\microsoft.windows.sdk.net.ref.10.0.19041.34.nupkg.sha512"
   ],
   "logs": []

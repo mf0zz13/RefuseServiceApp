@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QvjZjXCKiGY=",
+  "dgSpecHash": "RYl8ts2TQ8U=",
   "success": true,
-  "projectFilePath": "C:\\Users\\micha\\OneDrive\\Documents\\C#_code\\RefuseService\\RefuseServiceManagementPortal\\RefuseServiceManagementPortal.csproj",
+  "projectFilePath": "C:\\Users\\micha\\OneDrive\\Documents\\C#_code\\MSSA\\RefuseServiceApp\\RefuseServiceManagementPortal\\RefuseServiceManagementPortal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\micha\\.nuget\\packages\\blazor.bootstrap\\3.0.0\\blazor.bootstrap.3.0.0.nupkg.sha512",
     "C:\\Users\\micha\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.8\\microsoft.aspnetcore.authorization.8.0.8.nupkg.sha512",
