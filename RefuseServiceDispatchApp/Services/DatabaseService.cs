@@ -41,11 +41,12 @@ public class DatabaseService
         return results.ToList<Employee>();
     }
 
-    public async Task<List<Employee>> GetTrucksAsync()
+    public async Task<Truck>> GetTrucksAsync()
     {
-        var results = await QueryDatabaseAsync<Employee>("SELECT * From trucks");
+        var results = await QueryDatabaseAsync<Truck>("SELECT * FROM trucks");
 
-        return results.ToList<Employee>();
+        return results?.ToList() ?? new List<Truck>();
+    }
     }
 }
 
