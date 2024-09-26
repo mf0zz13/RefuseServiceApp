@@ -6,7 +6,7 @@ namespace RefuseServiceDispatchApp.Services;
 
 public class DatabaseService
 {
-    public async Task CreateDispatchRecord(DispatchRecord record)
+    public async Task CreateDispatchRecordAsync(DispatchRecord record)
     {
         var builder = new MySqlConnectionStringBuilder
         {
@@ -17,15 +17,15 @@ public class DatabaseService
             SslMode = MySqlSslMode.Required,
         };
 
-        using (var connection = new MySqlConnection(builder.ConnectionString))
-        {
-            await connection.OpenAsync();
+        using var connection = new MySqlConnection(builder.ConnectionString);
 
-            string sql = "INSERT INTO dispatchrecords (DispatchDate, ServiceArea, Route, TruckNumber, Driver, HelperOne, HelperTwo, RefuseType) " +
-                        $"VALUES ('{record.Date.Year}-{record.Date.Month}-{record.Date.Day}', '{record.ServiceArea}', '{record.Route}', '{record.TruckNumber}', '{record.Driver}', '{record.HelperOne}', '{record.HelperTwo}', '{record.RefuseType}')";
+        await connection.OpenAsync();
 
-            connection.Execute(sql);
-        }
+        string sql = "INSERT INTO dispatchrecords (DispatchDate, ServiceArea, Route, TruckNumber, Driver, HelperOne, HelperTwo, RefuseType) " +
+                    $"VALUES ('{record.Date.Year}-{record.Date.Month}-{record.Date.Day}', '{record.ServiceArea}', '{record.Route}', '{record.TruckNumber}', '{record.Driver}', '{record.HelperOne}', '{record.HelperTwo}', '{record.RefuseType}')";
+
+        connection.Execute(sql);
+
 
     }
 }
