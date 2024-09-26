@@ -6,7 +6,7 @@ namespace RefuseServiceDispatchApp.Services;
 
 public class DatabaseService
 {
-    public async Task CreateDispatchRecordAsync(DispatchRecord record)
+    private async Task<IEnumerable<T>?> QueryDatabaseAsync<T>(string sql)
     {
         var builder = new MySqlConnectionStringBuilder
         {
@@ -17,16 +17,35 @@ public class DatabaseService
             SslMode = MySqlSslMode.Required,
         };
 
-        using var connection = new MySqlConnection(builder.ConnectionString);
+        var connection = new MySqlConnection(builder.ConnectionString);
 
         await connection.OpenAsync();
 
+        var results = await connection.QueryAsync<T>(sql);
+
+        return results;
+    }
+
+    public async Task CreateDispatchRecordAsync(DispatchRecord record)
+    {
         string sql = "INSERT INTO dispatchrecords (DispatchDate, ServiceArea, Route, TruckNumber, Driver, HelperOne, HelperTwo, RefuseType) " +
                     $"VALUES ('{record.Date.Year}-{record.Date.Month}-{record.Date.Day}', '{record.ServiceArea}', '{record.Route}', '{record.TruckNumber}', '{record.Driver}', '{record.HelperOne}', '{record.HelperTwo}', '{record.RefuseType}')";
 
-        connection.Execute(sql);
+        await QueryDatabaseAsync<DispatchRecord>(sql);      
+    }
 
+    public async Task<List<Employee>> GetEmployeesAsync()
+    {
+        var results = await QueryDatabaseAsync<Employee>("SELECT * From employees");
 
+        return results.ToList<Employee>();
+    }
+
+    public async Task<List<Employee>> GetTrucksAsync()
+    {
+        var results = await QueryDatabaseAsync<Employee>("SELECT * From trucks");
+
+        return results.ToList<Employee>();
     }
 }
 
