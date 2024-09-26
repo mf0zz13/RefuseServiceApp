@@ -9,15 +9,19 @@
     }
 </MudSelect>
 Number Selected is @ServiceArea
+Role is @tempEmployee.Role.ToString()
 
 
 @code {
     private DateTime? DispatchDate { get; set; }
-    private int ServiceArea { get; set; } 
+    private int ServiceArea { get; set; }
+
+    private Employee tempEmployee = new();
 
     protected override void OnInitialized()
     {
         DispatchDate = DateTime.Today;
+        tempEmployee.Role = "Thrower";
     }
 
     public int[] numArray = { 1, 2, 3, 4, 5 };

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RefuseServiceRazorClassLibrary")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be6db1625ef990874f3ebc708837b50fbfdd3971")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e49ae46343afa12deed44f0f2daaca8e3978ea4d")]
 [assembly: System.Reflection.AssemblyProductAttribute("RefuseServiceRazorClassLibrary")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RefuseServiceRazorClassLibrary")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
