@@ -41,7 +41,7 @@ public class DatabaseService
         return results.ToList<Employee>();
     }
 
-    public async Task<Truck>> GetTrucksAsync()
+    public async Task<List<Truck>> GetTrucksAsync()
     {
         var results = await QueryDatabaseAsync<Truck>("SELECT * FROM trucks");
 
