@@ -43,7 +43,7 @@ public class DatabaseService
 
     public async Task<List<Truck>> GetTrucksAsync()
     {
-        var results = await QueryDatabaseAsync<Truck>($"SELECT * FROM trucks");
+        var results = await QueryDatabaseAsync<Truck>("SELECT * FROM trucks");
 
         return results?.ToList() ?? new List<Truck>();
     }
