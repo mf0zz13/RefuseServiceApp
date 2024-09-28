@@ -38,12 +38,12 @@ public class DatabaseService
     {
         var results = await QueryDatabaseAsync<Employee>("SELECT * From employees");
 
-        return results.ToList<Employee>();
+        return results.ToList<Employee>() ?? new List<Employee>();
     }
 
     public async Task<List<Truck>> GetTrucksAsync()
     {
-        var results = await QueryDatabaseAsync<Truck>("SELECT * FROM trucks");
+        var results = await QueryDatabaseAsync<Truck>($"SELECT * FROM trucks WHERE DispatchDate = '{DateTime.Today.Date.Year}-{DateTime.Today.Date.Month}-{DateTime.Today.Date.Day}'");
 
         return results?.ToList() ?? new List<Truck>();
     }
