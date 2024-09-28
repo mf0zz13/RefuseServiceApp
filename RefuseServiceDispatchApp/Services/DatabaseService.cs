@@ -43,9 +43,16 @@ public class DatabaseService
 
     public async Task<List<Truck>> GetTrucksAsync()
     {
-        var results = await QueryDatabaseAsync<Truck>($"SELECT * FROM trucks WHERE DispatchDate = '{DateTime.Today.Date.Year}-{DateTime.Today.Date.Month}-{DateTime.Today.Date.Day}'");
+        var results = await QueryDatabaseAsync<Truck>($"SELECT * FROM trucks");
 
         return results?.ToList() ?? new List<Truck>();
+    }
+
+    public async Task<List<DispatchRecord>> GetTodaysDispatchRecordAsync()
+    {
+        var results = await QueryDatabaseAsync<DispatchRecord>($"SELECT * FROM dispatchrecords WHERE DispatchDate = '{DateTime.Today.Date.Year}-{DateTime.Today.Date.Month}-{DateTime.Today.Date.Day}'");
+
+        return results?.ToList() ?? new List<DispatchRecord>();
     }
 }
 
