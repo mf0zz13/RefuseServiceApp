@@ -29,7 +29,7 @@ public class DatabaseService
     public async Task CreateDispatchRecordAsync(DispatchRecord record)
     {
         string sql = "INSERT INTO dispatchrecords (DispatchDate, ServiceArea, Route, TruckNumber, Driver, HelperOne, HelperTwo, RefuseType) " +
-                    $"VALUES ('{record.Date.Year}-{record.Date.Month}-{record.Date.Day}', '{record.ServiceArea}', '{record.Route}', '{record.TruckNumber}', '{record.Driver}', '{record.HelperOne}', '{record.HelperTwo}', '{record.RefuseType}')";
+                    $"VALUES ('{record.Date.Year}-{record.Date.Month}-{record.Date.Day}', '{record.ServiceArea}', '{record.Route}', '{record.TruckNumber}', '{record.Driver}', '{record.HelperOne}', '{record.HelperTwo}', '{record.RefuseType}');";
 
         await QueryDatabaseAsync<DispatchRecord>(sql);
     }
