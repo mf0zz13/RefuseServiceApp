@@ -31,7 +31,7 @@ public class DatabaseService
         string sql = "INSERT INTO dispatchrecords (DispatchDate, ServiceArea, Route, TruckNumber, Driver, HelperOne, HelperTwo, RefuseType) " +
                     $"VALUES ('{record.Date.Year}-{record.Date.Month}-{record.Date.Day}', '{record.ServiceArea}', '{record.Route}', '{record.TruckNumber}', '{record.Driver}', '{record.HelperOne}', '{record.HelperTwo}', '{record.RefuseType}')";
 
-        await QueryDatabaseAsync<DispatchRecord>(sql);      
+        await QueryDatabaseAsync<DispatchRecord>(sql);
     }
 
     public async Task<List<Employee>> GetEmployeesAsync()
@@ -46,7 +46,6 @@ public class DatabaseService
         var results = await QueryDatabaseAsync<Truck>("SELECT * FROM trucks");
 
         return results?.ToList() ?? new List<Truck>();
-    }
     }
 }
 
