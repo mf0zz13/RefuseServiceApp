@@ -1,29 +1,221 @@
 ﻿@page "/"
+@using System.Linq
+
+<MudThemeProvider IsDarkMode="true" Theme="_theme" />
+<MudStack Spacing="3">
+    <MudStack Style="width: auto">
+
+        <MudDatePicker @bind-Date="DispatchDate"
+                       Label="Date"
+                       Style="border-radius: 10px 10px 10px 10px;"
+                       AdditionalDateClassesFunc="@((DateTime dt) => (((int)dt.DayOfWeek == 0 || (int)dt.DayOfWeek == 6) ? "red-text text-accent-4" : ""))">
+            .red-text.
+        </MudDatePicker>
 
 
-<MudDatePicker Label="Date" Editable="true" @bind-Date="DispatchDate" />
-<MudSelect @bind-Value="ServiceArea" Label="Select Integer" Placeholder="Select Service Area">
-    @foreach (int num in numArray)
-    {
-        <MudSelectItem Value="@num">@num</MudSelectItem>
-    }
-</MudSelect>
-Number Selected is @ServiceArea
-Role is @tempEmployee.Role.ToString()
+        <MudSelect @bind-Value="record.ServiceArea"
+                   Variant="Variant.Filled"
+                   Label="Service Area"
+                   Dense="true"
+                   Placeholder="Select Service Area"
+                   Clearable="true"
+                   Class="mud-elevation-8"
+                   Style="background-color: #56706f;
+                          border-radius: 10px 10px 10px 10px;
+                          font-size: larger;">
 
+            @foreach (string area in serviceAreas)
+            {
+                <MudSelectItem Value="@area">@area</MudSelectItem>
+            }
+
+        </MudSelect>
+
+        <MudSelect @bind-Value="record.Route"
+                   Variant="Variant.Filled"
+                   Label="Route"
+                   Dense="true"
+                   Placeholder="Select Route"
+                   Clearable="true"
+                   Class="mud-elevation-8"
+                   Style="background-color: #56706f;
+                          border-radius: 10px 10px 10px 10px;
+                          font-size: larger;">
+
+            @foreach (string route in routes)
+            {
+                <MudSelectItem Value="@route">@route</MudSelectItem>
+            }
+
+        </MudSelect>
+
+        <MudSelect @bind-Value="record.RefuseType"
+                   Variant="Variant.Filled"
+                   Label="Refuse Type"
+                   Dense="true"
+                   Placeholder="Select Refuse Type"
+                   Clearable="true"
+                   Class="mud-elevation-8"
+                   Style="background-color: #56706f;
+                          border-radius: 10px 10px 10px 10px;
+                          font-size: larger;">
+
+            @foreach (string type in refuseTypes)
+            {
+                <MudSelectItem Value="@type">@type</MudSelectItem>
+            }
+
+        </MudSelect>
+
+        <MudSelect @bind-Value="record.TruckNumber"
+                   Variant="Variant.Filled"
+                   Label="Truck Number"
+                   Dense="true"
+                   Placeholder="Select Truck Number"
+                   Clearable="true"
+                   Class="mud-elevation-8"
+                   Style="background-color: #56706f;
+                          border-radius: 10px 10px 10px 10px;
+                          font-size: larger;">
+
+            @foreach (var truck in truckList)
+            {
+                if (!dispatchList.Any(record => record.TruckNumber == truck.TruckNumber))
+                {
+                    <MudSelectItem Value="@truck.TruckNumber">@truck.TruckNumber</MudSelectItem>
+                }
+            }
+
+        </MudSelect>
+
+        <MudSelect @bind-Value="record.Driver"
+                   Variant="Variant.Filled"
+                   Label="Driver"
+                   Dense="true"
+                   Placeholder="Select Driver"
+                   Clearable="true"
+                   Class="mud-elevation-8"
+                   Style="background-color: #56706f;
+                          border-radius: 10px 10px 10px 10px;
+                          font-size: larger;">
+
+            @foreach (var driver in driverList)
+            {
+                if (!dispatchList.Any(record => record.Driver == driver.EmployeeID))
+                {
+                    <MudSelectItem Value="@driver.EmployeeID">@($"{driver.FirstName} {driver.LastName}")</MudSelectItem>
+                }
+            }
+
+        </MudSelect>
+
+        <MudSelect @bind-Value="record.HelperOne"
+                   Variant="Variant.Filled"
+                   Label="Helper One"
+                   Dense="true"
+                   Placeholder="Select Helper"
+                   Clearable="true"
+                   Class="mud-elevation-8"
+                   Style="background-color: #56706f;
+                          border-radius: 10px 10px 10px 10px;
+                          font-size: larger;">
+
+            @foreach (var helper in helperList)
+            {
+                if (!dispatchList.Any(record => record.HelperOne == helper.EmployeeID || record.HelperTwo == helper.EmployeeID) && !(record.HelperTwo == helper.EmployeeID))
+                {
+                    <MudSelectItem Value="helper.EmployeeID">@($"{helper.FirstName} {helper.LastName}")</MudSelectItem>
+                }
+            }
+
+        </MudSelect>
+
+        <MudSelect @bind-Value="record.HelperTwo"
+                   Variant="Variant.Filled"
+                   Label="Helper Two"
+                   Dense="true"
+                   Placeholder="Select Helper"
+                   Clearable="true"
+                   Class="mud-elevation-8"
+                   Style="background-color: #56706f;
+                          border-radius: 10px 10px 10px 10px;
+                          font-size: larger;">
+
+            @foreach (var helper in helperList)
+            {
+                if (!dispatchList.Any(record => record.HelperOne == helper.EmployeeID || record.HelperTwo == helper.EmployeeID) && !(record.HelperOne == helper.EmployeeID))
+                {
+                    <MudSelectItem Value="helper.EmployeeID">@($"{helper.FirstName} {helper.LastName}")</MudSelectItem>
+                }
+            }
+
+        </MudSelect>
+
+        <MudButton OnClick="@DispatchTruck" Variant="Variant.Filled" FullWidth="true" Style="background-color:#56706f;">Dispatch</MudButton>
+
+
+    </MudStack>
+</MudStack>
 
 @code {
-    private DateTime? DispatchDate { get; set; }
-    private int ServiceArea { get; set; }
-    private DatabaseService db = new();
+    private MudTheme _theme = new()
+        {
+            PaletteDark = new PaletteDark()
+            {
+                Primary = Colors.BlueGray.Darken3,
+                // TODO: Pick Colors
+            }
+        };
 
-    private Employee tempEmployee = new();
+    // Instantiating Services and Objects
+    private DatabaseService db = new();
+    private DispatchRecord record = new();
+
+    // Lists to hold records from database
+    private List<Truck> truckList = new();
+    List<Employee> employeeList = new();
+    private List<Employee> driverList = new();
+    private List<Employee> helperList = new();
+    private List<DispatchRecord> dispatchList = new();
+
+    // Properties
+    private DateTime? DispatchDate { get; set; }
+
+    // Arrays to hold non-dynamic options
+    private string[] serviceAreas = { "1", "2", "3" };
+    private string[] routes = { "1", "2", "3" };
+    private string[] refuseTypes = { "Trash", "Recycling", "Yard Waste" };
+
+
+    // Enum to hold non-dynamic options
+    private enum Roles { Driver, Thrower, Management };
 
     protected async override void OnInitialized()
     {
-        DispatchDate = DateTime.Today;
+        // Querying Database on Start
+        truckList = await db.GetTrucksAsync();
+        employeeList = await db.GetEmployeesAsync();
+        dispatchList = await db.GetTodaysDispatchRecordAsync();
 
+        // Filtering down lists
+        truckList = truckList.Where(truck => truck.NeedMaintenance == false).ToList();
+        driverList = employeeList.Where(employee => employee.Role == Roles.Driver.ToString()).ToList();
+        helperList = employeeList.Where(employee => employee.Role == Roles.Thrower.ToString()).ToList();
     }
 
-    public int[] numArray = { 1, 2, 3, 4, 5 };
+    private async Task DispatchTruckAsync()
+    {
+        if (DispatchDate.HasValue)
+        {
+            record.Date = DispatchDate.Value;
+
+            await db.CreateDispatchRecordAsync(record);
+
+            // Refresh dispatch list after dispatching
+            dispatchList = await db.GetTodaysDispatchRecordAsync();
+
+        }
+    }
+
+
 }

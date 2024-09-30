@@ -29,16 +29,16 @@ public class DatabaseService
     public async Task CreateDispatchRecordAsync(DispatchRecord record)
     {
         string sql = "INSERT INTO dispatchrecords (DispatchDate, ServiceArea, Route, TruckNumber, Driver, HelperOne, HelperTwo, RefuseType) " +
-                    $"VALUES ('{record.Date.Year}-{record.Date.Month}-{record.Date.Day}', '{record.ServiceArea}', '{record.Route}', '{record.TruckNumber}', '{record.Driver}', '{record.HelperOne}', '{record.HelperTwo}', '{record.RefuseType}')";
+                    $"VALUES ('{record.Date.Year}-{record.Date.Month}-{record.Date.Day}', '{record.ServiceArea}', '{record.Route}', '{record.TruckNumber}', '{record.Driver}', '{record.HelperOne}', '{record.HelperTwo}', '{record.RefuseType}');";
 
-        await QueryDatabaseAsync<DispatchRecord>(sql);      
+        await QueryDatabaseAsync<DispatchRecord>(sql);
     }
 
     public async Task<List<Employee>> GetEmployeesAsync()
     {
         var results = await QueryDatabaseAsync<Employee>("SELECT * From employees");
 
-        return results.ToList<Employee>();
+        return results.ToList<Employee>() ?? new List<Employee>();
     }
 
     public async Task<List<Truck>> GetTrucksAsync()
@@ -47,6 +47,12 @@ public class DatabaseService
 
         return results?.ToList() ?? new List<Truck>();
     }
+
+    public async Task<List<DispatchRecord>> GetTodaysDispatchRecordAsync()
+    {
+        var results = await QueryDatabaseAsync<DispatchRecord>($"SELECT * FROM dispatchrecords WHERE DispatchDate = '{DateTime.Today.Date.Year}-{DateTime.Today.Date.Month}-{DateTime.Today.Date.Day}'");
+
+        return results?.ToList() ?? new List<DispatchRecord>();
     }
 }
 

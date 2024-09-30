@@ -2,8 +2,16 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:RefuseServiceDispatchApp"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              x:Class="RefuseServiceDispatchApp.MainPage"
-             BackgroundColor="{DynamicResource PageBackgroundColor}">
+             ios:Page.UseSafeArea="True">
+
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="0,1">
+            <GradientStop Color="#56706f"/>
+            <GradientStop Color="White"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
 
     <BlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html">
         <BlazorWebView.RootComponents>

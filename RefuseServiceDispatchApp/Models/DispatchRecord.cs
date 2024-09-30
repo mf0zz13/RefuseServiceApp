@@ -3,11 +3,11 @@
 public class DispatchRecord
 {
     public DateTime Date { get; set; }
-    public int ServiceArea { get; set; }
-    public int Route { get; set; }
-    public int TruckNumber { get; set; }
-    public int Driver { get; set; }
-    public int HelperOne { get; set; }
-    public int HelperTwo { get; set; }
-    public int RefuseType { get; set; }
+    public string ServiceArea { get; set; }
+    public string Route { get; set; }
+    public string TruckNumber { get; set; }
+    public string Driver { get; set; }
+    public string HelperOne { get; set; }
+    public string HelperTwo { get; set; }
+    public string RefuseType { get; set; }
 }
