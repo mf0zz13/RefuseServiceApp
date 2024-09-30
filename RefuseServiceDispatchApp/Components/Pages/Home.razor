@@ -7,7 +7,9 @@
 
         <MudDatePicker @bind-Date="DispatchDate"
                        Label="Date"
-                       Style="border-radius: 10px 10px 10px 10px;"
+                       Style="border-radius: 10px 10px 10px 10px;
+                              background-color: #56706f;
+                              padding: 10px;"
                        AdditionalDateClassesFunc="@((DateTime dt) => (((int)dt.DayOfWeek == 0 || (int)dt.DayOfWeek == 6) ? "red-text text-accent-4" : ""))">
             .red-text.
         </MudDatePicker>
@@ -151,7 +153,7 @@
 
         </MudSelect>
 
-        <MudButton OnClick="@DispatchTruck" Variant="Variant.Filled" FullWidth="true" Style="background-color:#56706f;">Dispatch</MudButton>
+        <MudButton OnClick="@DispatchTruckAsync" Variant="Variant.Filled" FullWidth="true" Style="background-color:#56706f;">Dispatch</MudButton>
 
 
     </MudStack>
