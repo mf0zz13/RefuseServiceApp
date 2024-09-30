@@ -2,12 +2,15 @@
 @using System.Linq
 
 <MudThemeProvider IsDarkMode="true" Theme="_theme" />
-<MudStack Spacing="3">
-    <MudStack Style="width: auto">
+<MudForm @bind-IsValid="EnableButton">
+    <MudStack Spacing="3" Style="width: auto">
 
         <MudDatePicker @bind-Date="DispatchDate"
                        Label="Date"
-                       Style="border-radius: 10px 10px 10px 10px;"
+                       Style="border-radius: 10px 10px 10px 10px;
+                              background-color: #56706f;
+                              padding: 10px;"
+                       Required="true"
                        AdditionalDateClassesFunc="@((DateTime dt) => (((int)dt.DayOfWeek == 0 || (int)dt.DayOfWeek == 6) ? "red-text text-accent-4" : ""))">
             .red-text.
         </MudDatePicker>
@@ -22,7 +25,8 @@
                    Class="mud-elevation-8"
                    Style="background-color: #56706f;
                           border-radius: 10px 10px 10px 10px;
-                          font-size: larger;">
+                          font-size: larger;"
+                   Required="true">
 
             @foreach (string area in serviceAreas)
             {
@@ -40,7 +44,8 @@
                    Class="mud-elevation-8"
                    Style="background-color: #56706f;
                           border-radius: 10px 10px 10px 10px;
-                          font-size: larger;">
+                          font-size: larger;"
+                   Required="true">
 
             @foreach (string route in routes)
             {
@@ -58,7 +63,8 @@
                    Class="mud-elevation-8"
                    Style="background-color: #56706f;
                           border-radius: 10px 10px 10px 10px;
-                          font-size: larger;">
+                          font-size: larger;"
+                   Required="true">
 
             @foreach (string type in refuseTypes)
             {
@@ -76,7 +82,8 @@
                    Class="mud-elevation-8"
                    Style="background-color: #56706f;
                           border-radius: 10px 10px 10px 10px;
-                          font-size: larger;">
+                          font-size: larger;"
+                   Required="true">
 
             @foreach (var truck in truckList)
             {
@@ -97,7 +104,8 @@
                    Class="mud-elevation-8"
                    Style="background-color: #56706f;
                           border-radius: 10px 10px 10px 10px;
-                          font-size: larger;">
+                          font-size: larger;"
+                   Required="true">
 
             @foreach (var driver in driverList)
             {
@@ -118,7 +126,8 @@
                    Class="mud-elevation-8"
                    Style="background-color: #56706f;
                           border-radius: 10px 10px 10px 10px;
-                          font-size: larger;">
+                          font-size: larger;"
+                   Required="true">
 
             @foreach (var helper in helperList)
             {
@@ -151,11 +160,21 @@
 
         </MudSelect>
 
-        <MudButton OnClick="@DispatchTruck" Variant="Variant.Filled" FullWidth="true" Style="background-color:#56706f;">Dispatch</MudButton>
+        <MudButton OnClick="@DispatchTruckAsync" 
+                   Variant="Variant.Filled" 
+                   FullWidth="true" 
+                   Style="background-color:#56706f;"
+                   Class="ml-auto"
+                   Disabled="(!EnableButton)">
+
+                   Dispatch
+
+        </MudButton>
 
 
     </MudStack>
-</MudStack>
+</MudForm>
+
 
 @code {
     private MudTheme _theme = new()
@@ -163,7 +182,7 @@
             PaletteDark = new PaletteDark()
             {
                 Primary = Colors.BlueGray.Darken3,
-                // TODO: Pick Colors
+                ActionDisabledBackground = Colors.BlueGray.Lighten3,
             }
         };
 
@@ -180,11 +199,12 @@
 
     // Properties
     private DateTime? DispatchDate { get; set; }
+    private bool EnableButton { get; set; }
 
     // Arrays to hold non-dynamic options
-    private string[] serviceAreas = { "1", "2", "3" };
-    private string[] routes = { "1", "2", "3" };
-    private string[] refuseTypes = { "Trash", "Recycling", "Yard Waste" };
+    readonly string[] serviceAreas = { "1", "2", "3" };
+    readonly string[] routes = { "1", "2", "3" };
+    readonly string[] refuseTypes = { "Trash", "Recycling", "Yard Waste" };
 
 
     // Enum to hold non-dynamic options
