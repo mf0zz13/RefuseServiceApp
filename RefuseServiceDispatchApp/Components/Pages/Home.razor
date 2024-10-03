@@ -218,9 +218,9 @@
         dispatchList = await db.GetTodaysDispatchRecordAsync();
 
         // Filtering down lists
-        truckList = truckList.Where(truck => truck.NeedMaintenance == false).ToList();
-        driverList = employeeList.Where(employee => employee.Role == Roles.Driver.ToString()).ToList();
-        helperList = employeeList.Where(employee => employee.Role == Roles.Thrower.ToString()).ToList();
+        truckList = truckList.Where(truck => truck.NeedMaintenance == false).OrderBy(x => x.TruckNumber).ToList();
+        driverList = employeeList.Where(employee => employee.Role == Roles.Driver.ToString()).OrderBy(x => x.FirstName).ToList();
+        helperList = employeeList.Where(employee => employee.Role == Roles.Thrower.ToString()).OrderBy(x => x.FirstName).ToList();
     }
 
     private async Task DispatchTruckAsync()
