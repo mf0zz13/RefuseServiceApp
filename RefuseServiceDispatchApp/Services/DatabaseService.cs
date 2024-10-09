@@ -5,7 +5,7 @@ namespace RefuseServiceDispatchApp.Services;
 
 public class DatabaseService
 {
-    private HttpClient client = new()
+    private readonly HttpClient client = new()
     {
         BaseAddress = new Uri("https://guntherrefusedispatchapi.azurewebsites.net/DispatchRecord/")
     };
@@ -18,7 +18,7 @@ public class DatabaseService
         }
         catch
         {
-            throw new NotImplementedException();
+            return;
         }
     }
 
