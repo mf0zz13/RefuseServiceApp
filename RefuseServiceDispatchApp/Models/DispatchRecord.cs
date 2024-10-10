@@ -2,7 +2,7 @@
 
 public class DispatchRecord
 {
-    public DateTime Date { get; set; }
+    public DateTime DispatchDate { get; set; }
     public string ServiceArea { get; set; }
     public string Route { get; set; }
     public string TruckNumber { get; set; }
